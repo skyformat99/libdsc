@@ -1,0 +1,16 @@
+# We're doing C-language implementations
+language: c
+
+# Skipping the install step; as we don't have any dependencies
+install: true
+
+# Running the build script
+# Params:
+#   CMAKE_INSTALL_PREFIX : sets the install prefix for install path
+#   DDEFINE_DEBUG : sets the debug print traces
+script:
+  - rm -rf lib bin build
+  - mkdir build && cd build
+  - cmake -DDEBUG_BUILD=YES -DCMAKE_INSTALL_PREFIX=.. ..
+  - make
+  - make install
