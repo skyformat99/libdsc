@@ -36,3 +36,6 @@
 build/
 lib/
 bin/
+
+# Temp
+.*.swp
